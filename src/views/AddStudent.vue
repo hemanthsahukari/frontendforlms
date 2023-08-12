@@ -67,7 +67,7 @@ import Navbar from '../components/Navbar.vue';
 
         methods: {
             addStudent(){
-                fetch('http://localhost:8080/add', {
+                fetch('http://localhost:8080/students/add', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

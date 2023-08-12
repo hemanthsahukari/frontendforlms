@@ -76,7 +76,7 @@ export default {
 
     methods: {
         getStudents(){
-            fetch(`http://localhost:8080/student/${this.$route.params.id}`)
+            fetch(`http://localhost:8080/students/${this.$route.params.id}`)
             .then(res => res.json())
             .then(data => {
                 this.student = data;
@@ -85,7 +85,7 @@ export default {
 
         },
         updateStudent(){
-            fetch(`http://localhost:8080/student`, {
+            fetch(`http://localhost:8080/students/`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
