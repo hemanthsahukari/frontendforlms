@@ -13,14 +13,31 @@
                     <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/add">Add User</a>
+                    <a class="nav-link" href="/view-books">view-books</a>
                     </li>
                     <li class="nav-item">
+                    <a class="nav-link" href="/view-students">view-students</a>
+                    </li>
+                    <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Students</a>
+    <ul class="dropdown-menu">
+        <li class="nav-item">
+                        <a class="nav-link" href="/add">Add User</a>
+                    </li>
+    </ul>
+  </li>
+
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Books</a>
+    <ul class="dropdown-menu">
+        <li class="nav-item">
                         <a class="nav-link" href="/add-book">Add Book</a>
                     </li>
-                    <!--<li class="nav-item">
-                        <a class="nav-link" herf="/view-books">View Books</a>
-                    </li>-->
+    </ul>
+  </li>
+                    
+            
 
                 </ul>
                

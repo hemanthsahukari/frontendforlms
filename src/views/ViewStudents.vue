@@ -61,7 +61,7 @@ import Navbar from '../components/Navbar.vue'
 
         methods: {
             getStudents(){
-                fetch('http://localhost:8080/students')
+                fetch('http://localhost:8080/students/')
                 .then(res => res.json())
                 .then(data => {
                     this.students = data
