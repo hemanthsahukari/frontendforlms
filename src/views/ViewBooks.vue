@@ -29,7 +29,10 @@
                               <a class="btn btn-primary" :href="`/edit-book/${book.id}`">Edit</a>
                               <button class="btn btn-danger mx-2" @click="deleteBook(book.id)">Delete</button>
                               <button class="btn btn-primary" @click="borrowBook(book.id)">Borrow</button>
-                              <button class="btn btn-success" @click="returnBook(book.id)">Return</button>
+                              <button class="btn btn-success" style="
+    border-left-width: 1px;
+    margin-left: 11px;
+" @click="returnBook(book.id)">Return</button>
                             </td>
                           </tr>
                         </tbody>
@@ -79,7 +82,7 @@ export default {
             });
         },
         borrowBook(bookid) {
-            fetch(`http://localhost:8080/borrow-book/${bookid}`, {
+            fetch(`http://localhost:8080/books/borrow/${bookid}`, {
                 method: 'PUT'
             })
             .then(response => response.json())
@@ -93,7 +96,7 @@ export default {
             });
         },
         returnBook(bookId) {
-            fetch(`http://localhost:8080/return-book/${bookId}`, {
+            fetch(`http://localhost:8080/books/return/${bookId}`, {
                 method: 'PUT'
             })
             .then(response => response.json())

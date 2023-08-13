@@ -3,6 +3,7 @@ import ViewStudents from '../views/ViewStudents.vue'
 import ViewBooks from '../views/ViewBooks.vue'
 import ViewHome from '../views/ViewHome.vue'
 import AdminLogin from '../views/AdminLogin.vue'
+import AdminLoginVue from '../views/AdminLogin.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,14 +28,6 @@ const router = createRouter({
       name: 'edit',
       component: () => import('../views/UpdateStudent.vue')
     },
-
-
-    // {
-    //   path: '/',
-    //   name: 'home',
-    //   component: ViewBooks
-    // },
-
 
     {
       path: '/view-books',

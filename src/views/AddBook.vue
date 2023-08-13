@@ -70,7 +70,7 @@ export default {
             })
             .then(data => {
                 console.log(data)
-                this.$router.push("/");
+                this.$router.push("/view-books");
             })
         }
     },

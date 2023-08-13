@@ -13,7 +13,7 @@
                     <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="/login">Admin</a>
+                    <a class="nav-link" href="/admin/login">Admin</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="/view-books">view-books</a>
@@ -49,7 +49,6 @@
         </nav>
     </main>
 </template>
-
 
 
 

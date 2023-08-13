@@ -37,45 +37,47 @@
     
     <script>
     export default {
-    data() {
-    return {
-    username: '',
-    password: '',
-    loginError: false,
-    };
-    },
-    methods: {
-    async login() {
-    const data = {
-    username: this.username,
-    password: this.password,
-    };
-    
-    try {
-    const response = await fetch('http://localhost:8080/admin/login', {
-    method: 'POST',
-    headers: {
-    'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-    });
-    
-    if (response.ok) {
-        if(this.username == "admin" && this.username == "admin"){
-        this.loginError = false;
-        alert('Login successful!');
-        }
-        else {
-            this.loginError = true;
-        }
-    } else {
-    this.loginError = true;
-    }
-    } catch (error) {
-    console.error('An error occurred:', error);
-    this.loginError = true;
-    }
-    },
-    },
+      data() {
+        return {
+          username: '',
+          password: '',
+          loginError: false,
+        };
+      },
+      methods: {
+        async login() {
+          console.log("inside log");
+            const data = {
+            username: this.username,
+            password: this.password,
+            };
+            
+            try {
+              const response = await fetch('http://localhost:8080/admin/login', {
+              method: 'POST',
+              headers: {
+              'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+              });
+              
+              if (response.ok) {
+                  if(this.username == "admin" && this.username == "admin"){
+                  this.loginError = false;
+                  alert('Login successful!');
+                  this.$router.push("/");
+                  }
+                  else {
+                      this.loginError = true;
+                  }
+              } else {
+              this.loginError = true;
+              }
+            } catch (error) {
+              console.error('An error occurred:', error);
+              this.loginError = true;
+            }
+        },
+      },
     };
     </script>
