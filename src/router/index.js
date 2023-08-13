@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ViewStudents from '../views/ViewStudents.vue'
 import ViewBooks from '../views/ViewBooks.vue'
 import ViewHome from '../views/ViewHome.vue'
+import AdminLogin from '../views/AdminLogin.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -14,6 +16,11 @@ const router = createRouter({
       path: '/add',
       name: 'add',
       component: () => import('../views/AddStudent.vue')
+    },
+    {
+      path: '/admin/login',
+      name: 'login',
+      component: AdminLogin
     },
     {
       path: '/edit/:id',

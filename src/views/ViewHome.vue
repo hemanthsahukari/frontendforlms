@@ -1,5 +1,6 @@
 <template>
     <main>
+        <Navbar />
         <div>
            "Welcome To Library Management System"
         </div>
