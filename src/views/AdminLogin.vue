@@ -62,10 +62,10 @@
               });
               
               if (response.ok) {
-                  if(this.username == "admin" && this.username == "admin"){
+                  if(this.username == "admin" && this.password == "@dm!n"){
                   this.loginError = false;
                   alert('Login successful!');
-                  this.$router.push("/");
+                  this.$router.push("/home-admin");
                   }
                   else {
                       this.loginError = true;

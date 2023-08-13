@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ViewStudents from '../views/ViewStudents.vue'
 import ViewBooks from '../views/ViewBooks.vue'
+import ViewBooksAdmin from '../views/Admin/ViewBooksAdmin.vue'
+import ViewHomeAdmin from '../views/Admin/ViewHomeAdmin.vue'
 import ViewHome from '../views/ViewHome.vue'
 import AdminLogin from '../views/AdminLogin.vue'
 import AdminLoginVue from '../views/AdminLogin.vue'
@@ -9,9 +11,14 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: ViewHome
+    },
+    {
+      path: '/home-admin',
+      name: 'home-admin',
+      component: ViewHomeAdmin
     },
     {
       path: '/add',
@@ -48,6 +55,11 @@ const router = createRouter({
       path: '/edit-book/:id',
       name: 'edit-book',
       component: () => import('../views/UpdateBook.vue')
+    },
+    {
+      path: '/view-books-admin',
+      name: 'view-books-admin',
+      component: ViewBooksAdmin
     }
 
   ]

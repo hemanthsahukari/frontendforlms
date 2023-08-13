@@ -83,7 +83,7 @@ export default {
             })
             .then(data => {
                 console.log(data);
-                this.$router.push('/view-books');
+                this.$router.push('/view-books-admin');
             });
         }
     }

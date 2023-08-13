@@ -1,6 +1,6 @@
 <template>
     <main>
-        <NavbarUser />
+        <Navbar />
         <div style="font-size: 70px;
     font-weight: 600;
     color: #fefefe;
@@ -15,11 +15,11 @@
 
 
 <script>
-import NavbarUser from '../components/NavbarUser.vue'
+import Navbar from '../../components/Navbar.vue'
 
     export default {
         components: {
-            NavbarUser
+            Navbar
         }
     }
 

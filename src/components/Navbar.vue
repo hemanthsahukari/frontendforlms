@@ -10,13 +10,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/home-admin">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="/admin/login">Admin</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="/view-books">view-books</a>
+                    <a class="nav-link" href="/view-books-admin">view-books</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="/view-students">view-students</a>
@@ -40,7 +37,9 @@
     </ul>
   </li>
                     
-            
+  <li class="nav-item">
+                    <a class="nav-link" href="/home">Logout</a>
+                    </li>
 
                 </ul>
                

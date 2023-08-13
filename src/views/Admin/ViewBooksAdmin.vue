@@ -1,6 +1,6 @@
 <template>
     <main>
-        <NavbarUser />
+        <Navbar />
 
         <!-- Table-->
         <div class="container">
@@ -8,6 +8,7 @@
                 <div class="col-md-12">
                     <h1 class="text-center">View Books</h1>
                     <!-- Add button -->
+                    <a href="/add-book" class="btn btn-primary">Add Book</a>
                     <table class="table table-striped">
                         <thead>
                           <tr>
@@ -25,11 +26,8 @@
                             <td>{{book.author}}</td>
                             <td>{{book.available ? 'Yes':'No'}}</td>
                             <td>
-                              <button class="btn btn-primary" @click="borrowBook(book.id)">Borrow</button>
-                              <button class="btn btn-success" style="
-    border-left-width: 1px;
-    margin-left: 11px;
-" @click="returnBook(book.id)">Return</button>
+                              <a class="btn btn-primary" :href="`/edit-book/${book.id}`">Edit</a>
+                              <button class="btn btn-danger mx-2" @click="deleteBook(book.id)">Delete</button>
                             </td>
                           </tr>
                         </tbody>
@@ -43,12 +41,12 @@
 </template>
 
 <script>
-import NavbarUser from '../components/NavbarUser.vue'
+import Navbar from '../../components/Navbar.vue'
 
 export default {
-    name: 'ViewBooks',
+    name: 'ViewBooksAdmin',
     components: {
-        NavbarUser
+        Navbar
     },
     data() {
         return {
