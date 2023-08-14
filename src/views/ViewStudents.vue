@@ -69,7 +69,7 @@ import Navbar from '../components/Navbar.vue'
                 })
             },
             deleteStudent(id){
-                fetch(`http://localhost:8080/student/${id}`, {
+                fetch(`http://localhost:8080/students/${id}`, {
                     method: 'DELETE'
                 })
                 .then(data => {

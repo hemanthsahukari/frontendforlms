@@ -13,10 +13,10 @@
                     <a class="nav-link" href="/home-admin">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="/view-books-admin">view-books</a>
+                    <a class="nav-link" href="/view-books-admin">View Books</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="/view-students">view-students</a>
+                    <a class="nav-link" href="/view-students">View Students</a>
                     </li>
                     <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Students</a>
@@ -48,6 +48,4 @@
         </nav>
     </main>
 </template>
-
-
 
