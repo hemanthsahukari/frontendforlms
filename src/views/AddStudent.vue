@@ -29,12 +29,22 @@
                       <input id="pNo" type="text"  name="pNo" class="form-control" placeholder="Phone Number" required v-model="student.pNo" >
                     </div>
                   </div>
+
+                  <!-- password-->
+                <div class="row">
+                  <div class="col-md-12 form-group mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input id="password"  type="password" name="password" class="form-control" placeholder="Password" required v-model="student.password">
+                  </div>
+                </div>
+
+
                 <div class="row">
                   <div class="col-md-12 form-group">
                     <input class="btn btn-primary w-100" type="submit" value="Submit">
                   </div>
                 </div>
-      
+
                 <div>
                   
                 </div>
@@ -60,7 +70,8 @@ import Navbar from '../components/Navbar.vue';
                 student : {
                     name: '',
                     email: '',
-                    pNo: ''
+                    pNo: '',
+                    password: ''
                 }
             }
         },
