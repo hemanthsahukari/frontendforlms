@@ -5,6 +5,7 @@ import ViewBooksAdmin from '../views/Admin/ViewBooksAdmin.vue'
 import ViewHomeAdmin from '../views/Admin/ViewHomeAdmin.vue'
 import ViewHome from '../views/ViewHome.vue'
 import AdminLogin from '../views/AdminLogin.vue'
+import UserLogin from '../views/UserLogin.vue'
 import AdminLoginVue from '../views/AdminLogin.vue'
 
 const router = createRouter({
@@ -27,8 +28,13 @@ const router = createRouter({
     },
     {
       path: '/admin/login',
-      name: 'login',
+      name: 'admin-login',
       component: AdminLogin
+    },
+    {
+      path: '/user/login',
+      name: 'user-login',
+      component: UserLogin
     },
     {
       path: '/edit/:id',
