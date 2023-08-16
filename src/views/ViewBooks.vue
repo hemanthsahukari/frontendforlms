@@ -52,11 +52,14 @@ export default {
     },
     data() {
         return {
-            books: []
+            books: [],
+            username:''
         }
     },
 
     beforeMount() {
+        const {username} = this.$route.query;
+        this.username= username;
         this.getBooks();
     },
 
@@ -79,7 +82,7 @@ export default {
             });
         },
         borrowBook(bookid) {
-            fetch(`http://localhost:8080/books/borrow/${bookid}`, {
+            fetch(`http://localhost:8080/books/borrow/${bookid}/${this.username}`, {
                 method: 'PUT'
             })
             .then(response => response.json())
@@ -98,11 +101,11 @@ export default {
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data); // Handle success response
-                this.getBooks(); // Refresh the book list
+                console.log(data); 
+                this.getBooks(); 
             })
             .catch(error => {
-                console.error(error); // Handle error
+                console.error(error); 
             });
         }
     }

@@ -4,6 +4,7 @@ import ViewBooks from '../views/ViewBooks.vue'
 import ViewBooksAdmin from '../views/Admin/ViewBooksAdmin.vue'
 import ViewHomeAdmin from '../views/Admin/ViewHomeAdmin.vue'
 import ViewHome from '../views/ViewHome.vue'
+import ViewLogin from '../views/ViewLogin.vue'
 import AdminLogin from '../views/AdminLogin.vue'
 import UserLogin from '../views/UserLogin.vue'
 import AdminLoginVue from '../views/AdminLogin.vue'
@@ -15,6 +16,11 @@ const router = createRouter({
       path: '/home',
       name: 'home',
       component: ViewHome
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: ViewLogin
     },
     {
       path: '/home-admin',

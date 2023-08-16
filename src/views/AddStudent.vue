@@ -1,6 +1,6 @@
 <template>
     <main>
-        <Navbar />
+        <NavbarLogin />
         <div class="my-5">
             <div class="mx-auto w-25 " style="max-width:100%;">
               <h2 class="text-center mb-3">Add Student</h2>
@@ -57,12 +57,12 @@
 
 
 <script>
-import Navbar from '../components/Navbar.vue';
+import NavbarLogin from '../components/NavbarLogin.vue';
 
     export default {
         name: 'AddStudent',
         components: {
-            Navbar
+            NavbarLogin
         },
 
         data() {
@@ -87,7 +87,7 @@ import Navbar from '../components/Navbar.vue';
                 })
                 .then(data => {
                     console.log(data)
-                    this.$router.push("/view-students");
+                    this.$router.push("/login");
                 })
 
             }

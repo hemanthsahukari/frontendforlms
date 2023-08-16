@@ -1,4 +1,5 @@
 <template>
+    <NavbarLogin />
     <div>
         <div class="my-5">
             <div class="mx-auto w-25 " style="max-width:100%;">
@@ -36,7 +37,11 @@
 </template>
     
     <script>
+    import NavbarLogin from '../components/NavbarLogin.vue';
     export default {
+        components: {
+            NavbarLogin
+        },
       data() {
         return {
           username: '',
@@ -53,7 +58,7 @@
             };
             
             try {
-              const response = await fetch('http://localhost:8080/user/login', {
+              const response = await fetch('http://localhost:8080/students/login', {
               method: 'POST',
               headers: {
               'Content-Type': 'application/json',
@@ -64,7 +69,10 @@
               if (response.ok) {
                 this.loginError = false;
                 alert('Login successful!');
-                this.$router.push("/home");
+                this.$router.push({
+                    path: '/home',
+                    query: {username: this.username}
+                });
               } else {
               this.loginError = true;
               }

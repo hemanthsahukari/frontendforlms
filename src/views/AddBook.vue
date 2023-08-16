@@ -61,7 +61,7 @@ export default {
 
     methods: {
         addBook() {
-            fetch('http://localhost:8080/books/add', {
+            fetch('http://localhost:8080/admin/books/add', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

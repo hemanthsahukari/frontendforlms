@@ -60,7 +60,7 @@
   </li>
                     
   <li class="nav-item">
-                    <a class="nav-link" href="/home">Logout</a>
+                    <a class="nav-link" href="/login">Logout</a>
                     </li>
 
                 </ul>
