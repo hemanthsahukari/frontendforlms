@@ -60,7 +60,7 @@ export default {
 
     methods: {
         getBooks() {
-            fetch('http://localhost:8080/books')
+            fetch('http://localhost:8080/books/all')
             .then(res => res.json())
             .then(data => {
                 this.books = data;

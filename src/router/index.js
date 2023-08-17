@@ -3,6 +3,7 @@ import ViewStudents from '../views/ViewStudents.vue'
 import ViewBooks from '../views/ViewBooks.vue'
 import ViewBooksAdmin from '../views/Admin/ViewBooksAdmin.vue'
 import ViewHomeAdmin from '../views/Admin/ViewHomeAdmin.vue'
+import AddStudentAdmin from '../views/Admin/AddStudentAdmin.vue'
 import ViewHome from '../views/ViewHome.vue'
 import ViewLogin from '../views/ViewLogin.vue'
 import AdminLogin from '../views/AdminLogin.vue'
@@ -31,6 +32,11 @@ const router = createRouter({
       path: '/add',
       name: 'add',
       component: () => import('../views/AddStudent.vue')
+    },
+    {
+      path: '/addStudent',
+      name: 'addStudent',
+      component: () => import('../views/Admin/AddStudentAdmin.vue')
     },
     {
       path: '/admin/login',
