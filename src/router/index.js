@@ -9,6 +9,7 @@ import ViewLogin from '../views/ViewLogin.vue'
 import AdminLogin from '../views/AdminLogin.vue'
 import UserLogin from '../views/UserLogin.vue'
 import AdminLoginVue from '../views/AdminLogin.vue'
+import ViewBorrowedBoooks from '../views/ViewBorrowedBooks.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -78,6 +79,11 @@ const router = createRouter({
       path: '/view-books-admin',
       name: 'view-books-admin',
       component: ViewBooksAdmin
+    },
+    {
+      path: '/ViewBorrowedBooks',
+      name: 'ViewBorrowedBooks',
+      component: ViewBorrowedBoooks
     }
 
   ]

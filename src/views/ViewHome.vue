@@ -12,7 +12,7 @@ import NavbarUser from '../components/NavbarUser.vue'
     export default {
         components: {
             NavbarUser
-}
+        }
     }
 
 </script>

@@ -64,7 +64,7 @@
               if (response.ok) {
                   if(this.username == "admin" && this.password == "@dm!n"){
                   this.loginError = false;
-                  alert('Login successful!');
+                  // alert('Login successful!');
                   this.$router.push("/home-admin");
                   }
                   else {

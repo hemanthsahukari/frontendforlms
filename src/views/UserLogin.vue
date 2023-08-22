@@ -6,20 +6,20 @@
               <h2 class="text-center mb-3">Login Form</h2>
                 <form @submit.prevent="login">
 
-                <div class="row">
-                            <div class="col-md-12 form-group mb-3">
+                            <div class="row">
+                             <div class="col-md-12 form-group mb-3">
                                 <label for="name" class="form-label">Username</label>
                                 <input id="username"  type="text" name="name" class="form-control" placeholder="username" required v-model="username">
-                            </div>
+                             </div>
                             </div>
 
 
                 <!-- <br> -->
-                <div class="row">
-                            <div class="col-md-12 form-group mb-3">
+                            <div class="row">
+                             <div class="col-md-12 form-group mb-3">
                                 <label for="name" class="form-label">Password</label>
                                 <input id="password"  type="text" name="name" class="form-control" placeholder="password" required v-model="password">
-                            </div>
+                              </div>
                             </div>
 
 
@@ -68,9 +68,9 @@
               
               if (response.ok) {
                 this.loginError = false;
-                alert('Login successful!');
+                // alert('Login successful!');
                 this.$router.push({
-                    path: '/home',
+                    path: '/view-books',
                     query: {username: this.username}
                 });
               } else {

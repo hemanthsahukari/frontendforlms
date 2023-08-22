@@ -72,6 +72,7 @@ export default {
 
     beforeMount() {
         const {username} = this.$route.query;
+        console.log(this.$route.query);
         this.username= username;
         this.getBooks();
     },
@@ -85,14 +86,65 @@ export default {
                 console.log(data);
             });
         },
+        // searchBooks() {
+        //     fetch(`http://localhost:8080/books/search/${this.searchQuery}`)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         this.books = data;
+        //         console.log(data);
+        //     });
+        // },
         searchBooks() {
-            fetch(`http://localhost:8080/books/search/${this.searchQuery}`)
+            const query = this.searchQuery.trim();
+            if (/^\d+$/.test(query)) {
+                this.searchById(query);
+            } else if (query.toLowerCase().startsWith('author:')) {
+              author = query.slice(7);
+              this.searchByAuthor(author);
+            } else {
+            this.searchByTitle(query);
+            }
+            },
+            searchById(id) {
+            fetch(`http://localhost:8080/books/search?id=${id}`)
             .then(res => res.json())
             .then(data => {
-                this.books = data;
-                console.log(data);
+            this.books = data;
+            })
+            .catch(error => {
+            console.error('Error searching books by ID:', error);
+            });
+            },
+            searchByAuthor(author) {
+            fetch(`http://localhost:8080/books/search?author=${author}`)
+            .then(res => res.json())
+            .then(data => {
+            this.books = data;
+            })
+            .catch(error => {
+            console.error('Error searching books by author:', error);
+            });
+            },
+            searchByTitle(title) {
+            fetch(`http://localhost:8080/books/search?title=${title}`)
+            .then(res => res.json())
+            .then(data => {
+            this.books = data;
+            })
+            .catch(error => {
+            console.error('Error searching books by title:', error);
             });
         },
+        // searchByNothing() {
+        //     fetch(`http://localhost:8080/books/search`)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //     this.books = data;
+        //     })
+        //        .catch(error => {
+        //        console.error('Error searching books by Nothing:', error);
+        //     });
+        // },
         deleteBook(id) {
             fetch(`http://localhost:8080/books/${id}`, {
                 method: 'DELETE'
@@ -102,17 +154,15 @@ export default {
                 this.getBooks();
             });
         },
+
         borrowBook(bookid) {
             fetch(`http://localhost:8080/books/borrow/${bookid}/${this.username}`, {
                 method: 'PUT'
             })
             .then(response => response.json())
             .then(data => {
-                // this.$toast.success('Book borrowed successfully');
-                 
                 console.log(data); 
                 this.getBooks(); 
-                // this.$router.push("/view-books");
             })
             .catch(error => {
                 console.log(error); 

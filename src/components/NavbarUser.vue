@@ -20,6 +20,9 @@
                     <li class="nav-item">
                     <a class="nav-link" href="/view-books">View Books</a>
                     </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/ViewBorrowedBooks">ViewBorrowedBooks</a>
+                    </li>
                 </ul>
                 </div>
             </div>
