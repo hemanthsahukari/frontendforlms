@@ -106,34 +106,34 @@ export default {
             }
             },
             searchById(id) {
-            fetch(`http://localhost:8080/books/search?id=${id}`)
-            .then(res => res.json())
-            .then(data => {
-            this.books = data;
+                fetch(`http://localhost:8080/books/search?id=${id}`)
+               .then(res => res.json())
+               .then(data => {
+               this.books = data;
             })
-            .catch(error => {
-            console.error('Error searching books by ID:', error);
+               .catch(error => {
+               console.error('Error searching books by ID:', error);
             });
             },
             searchByAuthor(author) {
-            fetch(`http://localhost:8080/books/search?author=${author}`)
-            .then(res => res.json())
-            .then(data => {
-            this.books = data;
+                fetch(`http://localhost:8080/books/search?author=${author}`)
+                .then(res => res.json())
+                .then(data => {
+                this.books = data;
             })
-            .catch(error => {
-            console.error('Error searching books by author:', error);
-            });
+                .catch(error => {
+                console.error('Error searching books by author:', error);
+           });
             },
             searchByTitle(title) {
-            fetch(`http://localhost:8080/books/search?title=${title}`)
-            .then(res => res.json())
-            .then(data => {
-            this.books = data;
+                fetch(`http://localhost:8080/books/search?title=${title}`)
+                .then(res => res.json())
+                .then(data => {
+                this.books = data;
             })
-            .catch(error => {
-            console.error('Error searching books by title:', error);
-            });
+                .catch(error => {
+                 console.error('Error searching books by title:', error);
+         });
         },
         // searchByNothing() {
         //     fetch(`http://localhost:8080/books/search`)
@@ -174,7 +174,6 @@ export default {
             })
             .then(response => response.json())
             .then(data => {
-                // this.$toast.success('Book returned successfully');
                 console.log(data); 
                 this.getBooks(); 
                 // this.$router.push("/view-books");

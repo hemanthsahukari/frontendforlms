@@ -20,6 +20,9 @@
                     <li class="nav-item">
                     <a class="nav-link" href="/view-students">View Students</a>
                     </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/BorrowedBooks">ViewBorrowedBooks</a>
+                    </li>
                     <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Students</a>
     <ul class="dropdown-menu" style="

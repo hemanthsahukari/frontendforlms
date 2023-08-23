@@ -1,5 +1,5 @@
 <template>
-    <NavbarUser /> 
+    <Navbar /> 
     <div>
         <h2>Borrowed Books</h2>
         <table class="table table-striped">
@@ -8,9 +8,10 @@
                             <th scope="col">Id</th>
                             <th scope="col">Title</th>
                             <th scope="col">Author</th>
-                            <!-- <th scope="col">BorrowedBy</th> -->
+                            <th scope="col">BorrowedBy</th>
                             <th scope="col">Borrow Date</th>
                             <th scope="col">Return Date</th> 
+                            <th scope="col">Fine amount</th>
                             
         
 
@@ -21,9 +22,10 @@
                             <th scope="row">{{book.id}}</th>
                             <td>{{book.title}}</td>
                             <td>{{book.author}}</td>
-                            <!-- <td>{{ book.borrowBy }}</td> -->
+                            <td>{{ book.borrowBy }}</td>
                             <td>{{ book.borrowDate }}</td>
-                            <td>{{ book.returnDate }}</td>    
+                            <td>{{ book.returnDate }}</td>
+                            <td>{{ book.fineAmount }}</td>    
                     
                           </tr>
                         </tbody>
@@ -33,11 +35,11 @@
 
 
 <script>
-import NavbarUser from '../components/NavbarUser.vue';
+import Navbar from '../../components/Navbar.vue';
  export default{
-    name: 'ViewBorrowedBooks',
+    name: 'ViewBorrowedBooksAdmin',
     components: {
-        NavbarUser
+        Navbar
     },
     data() {
         return {
