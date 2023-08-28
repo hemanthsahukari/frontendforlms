@@ -1,10 +1,3 @@
-<!-- <template>
-    <main>
-        
-    </main>
-</template> -->
-
-
 
 <template>
     <main>

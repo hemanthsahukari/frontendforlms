@@ -28,7 +28,7 @@
                       <label for="pNo" class="form-label">Phone Number</label>
                       <input id="pNo" type="text"  name="pNo" class="form-control" placeholder="Phone Number" required v-model="student.pNo" >
                     </div>
-                  </div>             
+                </div>             
                 
                
                 <div class="row">

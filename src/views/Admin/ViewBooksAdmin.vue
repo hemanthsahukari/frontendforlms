@@ -96,7 +96,7 @@ export default {
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data); // Handle success response
+                console.log(data); 
                 this.getBooks(); // Refresh the book list
             })
             .catch(error => {

@@ -18,22 +18,22 @@
                             <div class="row">
                              <div class="col-md-12 form-group mb-3">
                                 <label for="name" class="form-label">Password</label>
-                                <input id="password"  type="text" name="name" class="form-control" placeholder="password" required v-model="password">
+                                <input id="password"  type="password" name="password" class="form-control" placeholder="password" required v-model="password">
                               </div>
                             </div>
 
 
                 <!-- <br> -->
-                <div class="row">
-                  <div class="col-md-12 form-group">
-                    <input class="btn btn-primary w-100" type="submit" value="Submit">
-                  </div>
+                          <div class="row">
+                            <div class="col-md-12 form-group">
+                              <input class="btn btn-primary w-100" type="submit" value="Submit">
+                          </div>
+                          </div>
+                        </form>
+                        <p v-if="loginError" style="color: red;">Invalid credentials. Please try again.</p>
                 </div>
-                </form>
-                <p v-if="loginError" style="color: red;">Invalid credentials. Please try again.</p>
             </div>
-        </div>
-    </div>
+       </div>
 </template>
     
     <script>
