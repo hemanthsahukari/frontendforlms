@@ -16,7 +16,6 @@
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone Number</th>
-                            
                             <th scope="col">Action</th>
                           </tr>
                         </thead>
@@ -62,7 +61,7 @@ import Navbar from '../components/Navbar.vue'
 
         methods: {
             getStudents(){
-                fetch('http://localhost:8080/students')
+                fetch('http://localhost:8080/students/')
                 .then(res => res.json())
                 .then(data => {
                     this.students = data
@@ -70,7 +69,7 @@ import Navbar from '../components/Navbar.vue'
                 })
             },
             deleteStudent(id){
-                fetch(`http://localhost:8080/student/${id}`, {
+                fetch(`http://localhost:8080/students/${id}`, {
                     method: 'DELETE'
                 })
                 .then(data => {

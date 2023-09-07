@@ -1,6 +1,6 @@
 <template>
     <main>
-        <Navbar />
+        <NavbarLogin />
         <div class="my-5">
             <div class="mx-auto w-25 " style="max-width:100%;">
               <h2 class="text-center mb-3">Add Student</h2>
@@ -29,17 +29,22 @@
                       <input id="pNo" type="text"  name="pNo" class="form-control" placeholder="Phone Number" required v-model="student.pNo" >
                     </div>
                   </div>
-      
-                
-               
-                
-               
+
+                  <!-- password-->
+                <div class="row">
+                  <div class="col-md-12 form-group mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input id="password"  type="password" name="password" class="form-control" placeholder="Password" required v-model="student.password">
+                  </div>
+                </div>
+
+
                 <div class="row">
                   <div class="col-md-12 form-group">
                     <input class="btn btn-primary w-100" type="submit" value="Submit">
                   </div>
                 </div>
-      
+
                 <div>
                   
                 </div>
@@ -52,12 +57,12 @@
 
 
 <script>
-import Navbar from '../components/Navbar.vue';
+import NavbarLogin from '../components/NavbarLogin.vue';
 
     export default {
         name: 'AddStudent',
         components: {
-            Navbar
+            NavbarLogin
         },
 
         data() {
@@ -65,14 +70,15 @@ import Navbar from '../components/Navbar.vue';
                 student : {
                     name: '',
                     email: '',
-                    pNo: ''
+                    pNo: '',
+                    password: ''
                 }
             }
         },
 
         methods: {
             addStudent(){
-                fetch('http://localhost:8080/add', {
+                fetch('http://localhost:8080/students/add', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -81,7 +87,7 @@ import Navbar from '../components/Navbar.vue';
                 })
                 .then(data => {
                     console.log(data)
-                    this.$router.push("/");
+                    this.$router.push("/login");
                 })
 
             }

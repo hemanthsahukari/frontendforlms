@@ -1,10 +1,10 @@
 <template>
     <main>
-        <Navbar/>
+        <NavbarLogin />
         <div class="my-5">
             <div class="mx-auto w-25 " style="max-width:100%;">
-              <h2 class="text-center mb-3">Update student</h2>
-              <form @submit.prevent="updateStudent">
+              <h2 class="text-center mb-3">Add Student</h2>
+              <form @submit.prevent="addStudent">
                 <!--name-->
                 <div class="row">
                   <div class="col-md-12 form-group mb-3">
@@ -28,15 +28,23 @@
                       <label for="pNo" class="form-label">Phone Number</label>
                       <input id="pNo" type="text"  name="pNo" class="form-control" placeholder="Phone Number" required v-model="student.pNo" >
                     </div>
-                </div>             
-                
-               
+                  </div>
+
+                  <!-- password-->
+                <div class="row">
+                  <div class="col-md-12 form-group mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input id="password"  type="password" name="password" class="form-control" placeholder="Password" required v-model="student.password">
+                  </div>
+                </div>
+
+
                 <div class="row">
                   <div class="col-md-12 form-group">
                     <input class="btn btn-primary w-100" type="submit" value="Submit">
                   </div>
                 </div>
-      
+
                 <div>
                   
                 </div>
@@ -44,60 +52,48 @@
         
             </div>
           </div>
-
     </main>
 </template>
 
 
 <script>
-import Navbar from '../components/Navbar.vue';
+import NavbarLogin from '../../components/NavbarLogin.vue';
 
-export default {
-    name: 'UpdateStudent',
-    components: {
-        Navbar
-    },
-
-    data(){
-        return {
-            student: {
-                id: '',
-                name: '',
-                email: '',
-                pNo: ''
-                
-            }
-        }
-    },
-
-    beforeMount(){
-        this.getStudents();
-    },
-
-    methods: {
-        getStudents(){
-            fetch(`http://localhost:8080/students/${this.$route.params.id}`)
-            .then(res => res.json())
-            .then(data => {
-                this.student = data;
-                console.log(this.student);
-            })
-
+    export default {
+        name: 'AddStudent',
+        components: {
+            NavbarLogin
         },
-        updateStudent(){
-            fetch(`http://localhost:8080/students/`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(this.student)
-            })
-            .then(data => {
-                console.log(data);
-                this.$router.push('/view-students');
-            })
-        }
+
+        data() {
+            return {
+                student : {
+                    name: '',
+                    email: '',
+                    pNo: '',
+                    password: ''
+                }
+            }
+        },
+
+        methods: {
+            addStudent(){
+                fetch('http://localhost:8080/students/add', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(this.student)
+                })
+                .then(data => {
+                    console.log(data)
+                    this.$router.push("/view-students");
+                })
+
+            }
+        },
+            
     }
-}
+
 
 </script>

@@ -12,62 +12,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link" href="/home-admin">Home</a>
+                    <a class="nav-link" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="/view-books-admin">View Books</a>
+                    <a class="nav-link" href="/admin/login">Admin</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="/view-students">View Students</a>
+                    <a class="nav-link" href="/view-books">View Books</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="/BorrowedBooks">ViewBorrowedBooks</a>
+                    <a class="nav-link" href="/ViewBorrowedBooks">ViewBorrowedBooks</a>
                     </li>
-                    <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Students</a>
-    <ul class="dropdown-menu" style="
-    padding-bottom: 0px;
-    border-right-width: 4px;
-    margin-top: 0px;
-    top: 63px;
-    border-bottom-width: 4px;
-    padding-top: 0px;
-">
-        <li class="nav-item">
-                        <a class="nav-link" href="/add" style="
-    padding-right: 0px;
-    padding-left: 39px;
-">Add User</a>
-                    </li>
-    </ul>
-  </li>
-
-
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Books</a>
-    <ul class="dropdown-menu" style="
-    padding-bottom: 0px;
-    border-right-width: 4px;
-    margin-top: 0px;
-    top: 63px;
-    border-bottom-width: 4px;
-    padding-top: 0px;
-">
-        <li class="nav-item">
-                        <a class="nav-link" href="/add-book" style="
-    padding-right: 0px;
-    padding-left: 39px;
-">Add Book</a>
-                    </li>
-    </ul>
-  </li>
-                    
-  <li class="nav-item">
-                    <a class="nav-link" href="/login">Logout</a>
-                    </li>
-
                 </ul>
-               
                 </div>
             </div>
         </nav>
@@ -144,5 +100,5 @@ background-color: #e74c3c;
 .container-fluid {
 padding: 20px;
 }
-</style>
 
+</style>
