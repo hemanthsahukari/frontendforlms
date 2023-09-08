@@ -13,7 +13,7 @@
                         <input name="title" type="text"
                         class="form-control"
                         v-model="searchQuery"
-                        placeholder="Search By Title"/>
+                        placeholder="Search By Id, Title, Author"/>
                         <div class="input-group-append" style="    padding-left: 10px;">
                             <button class="btn btn-outline-secondary" type="button" @click="searchBooks">search</button>
                         </div>
@@ -87,14 +87,7 @@ export default {
                 console.log(data);
             });
         },
-        // searchBooks() {
-        //     fetch(`http://localhost:8080/books/search/${this.searchQuery}`)
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         this.books = data;
-        //         console.log(data);
-        //     });
-        // },
+        
         searchBooks() {
             const query = this.searchQuery.trim();
             let author;
@@ -151,22 +144,39 @@ export default {
             fetch(`http://localhost:8080/books/borrow/${bookid}/${this.username}`, {
                 method: 'PUT'
             })
-            .then(response => response.json())
+            // .then(response => response.json())
             .then(data => {
-                console.log(data); 
+                console.log("data print:" , data); 
+                var statusMessage;
+                if(data.status == 200) {
+                    statusMessage = "Book borrowed successfully!";
+                }
+                else {
+                    statusMessage = "Pay the fine amount to borrow another book!";
+                }
+                alert(statusMessage);
                 this.getBooks(); 
             })
             .catch(error => {
                 console.log(error); 
+                console.error(error);
             });
         },
         returnBook(bookId) {
             fetch(`http://localhost:8080/books/return/${bookId}`, {
                 method: 'PUT'
             })
-            .then(response => response.json())
+            // .then(response => response.json())
             .then(data => {
                 console.log(data); 
+                var statusMessage;
+                if(data.status == 200) {
+                    statusMessage = "Book return successfully!";
+                }
+                else {
+                    statusMessage = "Error while returning book!";
+                }
+                alert(statusMessage);
                 this.getBooks();
             })
             .catch(error => {
