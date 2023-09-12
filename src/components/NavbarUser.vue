@@ -15,9 +15,6 @@
                     <a class="nav-link" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="/admin/login">Admin</a>
-                    </li>
-                    <li class="nav-item">
                     <a class="nav-link" href="/view-books">View Books</a>
                     </li>
                     <li class="nav-item">

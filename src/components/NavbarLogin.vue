@@ -17,6 +17,9 @@ padding-top: 2px;">
         <li class="nav-item">
         <a class="nav-link" href="/add">Sign In</a>
         </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/admin/login">Admin</a>
+        </li>
         </ul>
         </div>
     </div>

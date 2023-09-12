@@ -147,14 +147,12 @@ export default {
             // .then(response => response.json())
             .then(data => {
                 console.log("data print:" , data); 
-                var statusMessage;
                 if(data.status == 200) {
-                    statusMessage = "Book borrowed successfully!";
+                    alert( "Book borrowed successfully!");
                 }
-                else {
-                    statusMessage = "Pay the fine amount to borrow another book!";
+                else if(data.status == 202){
+                    alert("Pay the fine amount to borrow another book!");
                 }
-                alert(statusMessage);
                 this.getBooks(); 
             })
             .catch(error => {
@@ -169,14 +167,14 @@ export default {
             // .then(response => response.json())
             .then(data => {
                 console.log(data); 
-                var statusMessage;
+                
                 if(data.status == 200) {
-                    statusMessage = "Book return successfully!";
+                    alert("Book return successfully!");
                 }
                 else {
-                    statusMessage = "Error while returning book!";
+                    alert("Error while returning book!");
                 }
-                alert(statusMessage);
+                
                 this.getBooks();
             })
             .catch(error => {

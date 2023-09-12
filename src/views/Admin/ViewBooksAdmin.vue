@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <h1 class="text-center">View Books</h1>
                     <!-- Add button -->
-                    <a href="/add-book" class="btn btn-primary">Add Book</a>
+                    <!-- <a href="/add-book" class="btn btn-primary">Add Book</a> -->
                     <table class="table table-striped">
                         <thead>
                           <tr>
