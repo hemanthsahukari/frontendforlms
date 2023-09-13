@@ -13,7 +13,7 @@
                         <input name="title" type="text"
                         class="form-control"
                         v-model="searchQuery"
-                        placeholder="Search By Id, Title, Author"/>
+                        placeholder="Search By Title, Author"/>
                         <div class="input-group-append" style="    padding-left: 10px;">
                             <button class="btn btn-outline-secondary" type="button" @click="searchBooks">search</button>
                         </div>
@@ -26,7 +26,7 @@
                             <th scope="col">Id</th>
                             <th scope="col">Title</th>
                             <th scope="col">Author</th>
-                            <th scope="col">Available</th>
+                            <th scope="col">Copies</th>
                             <th scope="col">Action</th>
                           </tr>
                         </thead>
@@ -35,12 +35,12 @@
                             <th scope="row">{{book.id}}</th>
                             <td>{{book.title}}</td>
                             <td>{{book.author}}</td>
-                            <td>{{book.available ? 'Yes':'No'}}</td>
+                            <td>{{book.copiesAvailable}}</td>
                             <td>
-                              <button class="btn btn-primary" @click="borrowBook(book.id)" :disabled="book.available===false">Borrow</button>
+                              <button class="btn btn-primary" @click="borrowBook(book.id)" :disabled="book.copiesAvailable===0">Borrow</button>
                               <button class="btn btn-success" style="border-left-width: 1px;
                               margin-left: 11px;
-                              " @click="returnBook(book.id)" :disabled="book.available===true">Return</button>
+                              " @click="returnBook(book.id)" :disabled="book.copiesAvailable===book.firstCopy">Return</button>
                             </td>
                           </tr>
                         </tbody>
@@ -100,16 +100,16 @@ export default {
                 this.searchByTitle(query);
         }
     },
-            searchById(id) {
-                fetch(`http://localhost:8080/books/search?id=${id}`)
-               .then(res => res.json())
-               .then(data => {
-               this.books = data;
-            })
-               .catch(error => {
-               console.error('Error searching books by ID:', error);
-        });
-    },
+    //         searchById(id) {
+    //             fetch(`http://localhost:8080/books/search?id=${id}`)
+    //            .then(res => res.json())
+    //            .then(data => {
+    //            this.books = data;
+    //         })
+    //            .catch(error => {
+    //            console.error('Error searching books by ID:', error);
+    //     });
+    // },
             searchByAuthor(author) {
                 fetch(`http://localhost:8080/books/search?author=${author}`)
                 .then(res => res.json())
@@ -161,7 +161,7 @@ export default {
             });
         },
         returnBook(bookId) {
-            fetch(`http://localhost:8080/books/return/${bookId}`, {
+            fetch(`http://localhost:8080/books/return/${bookId}/${this.username}`, {
                 method: 'PUT'
             })
             // .then(response => response.json())

@@ -15,7 +15,7 @@
                             <th scope="col">Id</th>
                             <th scope="col">Title</th>
                             <th scope="col">Author</th>
-                            <th scope="col">Available</th>
+                            <th scope="col">Copies</th>
                             <th scope="col">Action</th>
                           </tr>
                         </thead>
@@ -24,7 +24,7 @@
                             <th scope="row">{{book.id}}</th>
                             <td>{{book.title}}</td>
                             <td>{{book.author}}</td>
-                            <td>{{book.available ? 'Yes':'No'}}</td>
+                            <td>{{book.copiesAvailable}}</td>
                             <td>
                               <a class="btn btn-primary" :href="`/edit-book/${book.id}`">Edit</a>
                               <button class="btn btn-danger mx-2" @click="deleteBook(book.id)">Delete</button>

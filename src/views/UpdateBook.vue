@@ -20,14 +20,15 @@
                             <input id="author" type="text" name="author" class="form-control" placeholder="Author" required v-model="book.author">
                         </div>
                     </div>
-
-                    <!-- Availability -->
+                    <!-- copies -->
                     <div class="row">
-                        <div class="col-md-12 form-check mb-3">
-                            <input id="available" type="checkbox" name="available" class="form-check-input" v-model="book.available">
-                            <label for="available" class="form-check-label">Available</label>
+                        <div class="col-md-12 form-group mb-3">
+                            <label for="copies" class="form-label">copies</label>
+                            <input id="copies" type="number" name="copies" class="form-control" placeholder="Copies" required v-model="book.copies">
                         </div>
                     </div>
+
+                    
 
                     <div class="row">
                         <div class="col-md-12 form-group">
@@ -55,7 +56,7 @@ export default {
                 id: '',
                 title: '',
                 author: '',
-                available: true
+                copies: ''
             }
         }
     },

@@ -13,6 +13,7 @@
                         </div>
                     </div>
 
+                    
                     <!-- Author -->
                     <div class="row">
                         <div class="col-md-12 form-group mb-3">
@@ -21,13 +22,14 @@
                         </div>
                     </div>
 
-                    <!-- Availability -->
+                 <!-- copies -->
                     <div class="row">
-                        <div class="col-md-12 form-check mb-3">
-                            <input id="available" type="checkbox" name="available" class="form-check-input" v-model="book.available">
-                            <label for="available" class="form-check-label">Available</label>
+                        <div class="col-md-12 form-group mb-3">
+                            <label for="copies" class="form-label">Copies</label>
+                            <input id="copies" type="number" name="copies" class="form-control" placeholder="Copies" required v-model="book.copiesAvailable">
                         </div>
                     </div>
+
 
                     <div class="row">
                         <div class="col-md-12 form-group">
@@ -54,7 +56,7 @@ export default {
             book: {
                 title: '',
                 author: '',
-                available: true
+                copies: 0,
             }
         }
     },
@@ -69,6 +71,7 @@ export default {
                 body: JSON.stringify(this.book)
             })
             .then(data => {
+                // console.log(this.book.copies)
                 console.log(data)
                 this.$router.push("/view-books-admin");
             })
