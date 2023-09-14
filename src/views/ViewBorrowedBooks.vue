@@ -49,7 +49,18 @@ import NavbarUser from '../components/NavbarUser.vue';
     },
     methods: {
         getBorrowedBooks() {
-            fetch('http://localhost:8080/books/borrowed')
+            var name;
+            fetch('http://localhost:8080/students/getCurrentMomo')
+            .then(response => {
+                if(!response.ok) {
+                    throw new Error('Network reponse was not OK');
+                }
+                return response.text();
+            })
+            .then(data => {
+                name = data;
+                console.log("username :" + name);
+            fetch(`http://localhost:8080/books/borrowed/${name}`)
             .then((res)=>res.json())
             .then((data)=>{
                 this.borrowedBooks = data;
@@ -58,6 +69,7 @@ import NavbarUser from '../components/NavbarUser.vue';
             .catch((error)=>{
                 console.log(error);
             })
+        })
         }
     }
  }  

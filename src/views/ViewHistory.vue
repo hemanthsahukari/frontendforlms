@@ -31,11 +31,13 @@
 
 <script>
 import NavbarUser from '../components/NavbarUser.vue'
-// import VueToast from 'vue-toast-notification'
+import UserLogin from './UserLogin.vue';
 export default {
     name: 'ViewHistory',
     components: {
-        NavbarUser
+        NavbarUser,
+        UserLogin
+
     },
     data() {
         return {
@@ -45,21 +47,28 @@ export default {
     },
 
     beforeMount() {
-        const {username} = this.$route.query;
-        console.log(this.$route.query);
-        this.username= username;
-        console.log("Username:", this.username);
         this.getHistory();
     },
 
     methods: {
         getHistory() {
-            fetch(`http://localhost:8080/students/history/${this.username}`)
-            .then(res => res.json())
+            var name;
+            fetch('http://localhost:8080/students/getCurrentMomo')
+            .then(response => {
+                if(!response.ok) {
+                    throw new Error('Network reponse was not OK');
+                }
+                return response.text();
+            })
             .then(data => {
-                this.histories = data;
-                // console.log("Username:", this.username);
-                console.log(data);
+                name = data;
+                console.log("username :" + name);
+                fetch(`http://localhost:8080/students/history/${name}`)
+                .then(res => res.json())
+                .then(data => {
+                    this.histories = data;
+                    console.log(data);
+                });
             });
         }     
     }

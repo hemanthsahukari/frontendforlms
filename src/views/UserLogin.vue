@@ -71,7 +71,7 @@
                 // alert('Login successful!');
                 this.$router.push({
                     path: '/view-books',
-                    query: {username: this.username}
+                    // query: {username: this.username}
                 });
               } else {
               this.loginError = true;

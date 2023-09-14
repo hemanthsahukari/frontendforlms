@@ -56,7 +56,7 @@ export default {
             book: {
                 title: '',
                 author: '',
-                copies: 0,
+                copiesAvailable: 0
             }
         }
     },

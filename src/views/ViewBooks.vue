@@ -37,7 +37,7 @@
                             <td>{{book.author}}</td>
                             <td>{{book.copiesAvailable}}</td>
                             <td>
-                              <button class="btn btn-primary" @click="borrowBook(book.id)" :disabled="book.copiesAvailable===0">Borrow</button>
+                              <button class="btn btn-primary" @click="borrowBook(book.id)" :disabled="book.copiesAvailable==0">Borrow</button>
                               <button class="btn btn-success" style="border-left-width: 1px;
                               margin-left: 11px;
                               " @click="returnBook(book.id)" :disabled="book.copiesAvailable===book.firstCopy">Return</button>
@@ -70,10 +70,6 @@ export default {
     },
 
     beforeMount() {
-        const {username} = this.$route.query;
-        console.log(this.$route.query);
-        this.username= username;
-        console.log("Username:", this.username);
         this.getBooks();
     },
 
@@ -100,16 +96,6 @@ export default {
                 this.searchByTitle(query);
         }
     },
-    //         searchById(id) {
-    //             fetch(`http://localhost:8080/books/search?id=${id}`)
-    //            .then(res => res.json())
-    //            .then(data => {
-    //            this.books = data;
-    //         })
-    //            .catch(error => {
-    //            console.error('Error searching books by ID:', error);
-    //     });
-    // },
             searchByAuthor(author) {
                 fetch(`http://localhost:8080/books/search?author=${author}`)
                 .then(res => res.json())
@@ -141,45 +127,71 @@ export default {
         },
 
         borrowBook(bookid) {
-            fetch(`http://localhost:8080/books/borrow/${bookid}/${this.username}`, {
-                method: 'PUT'
+            var name;
+            fetch('http://localhost:8080/students/getCurrentMomo')
+            .then(response => {
+                if(!response.ok) {
+                    throw new Error('Network reponse was not OK');
+                }
+                return response.text();
             })
-            // .then(response => response.json())
             .then(data => {
-                console.log("data print:" , data); 
-                if(data.status == 200) {
-                    alert( "Book borrowed successfully!");
+                name = data;
+                console.log("username :" + name);
+
+                fetch(`http://localhost:8080/books/borrow/${bookid}/${name}`, {
+                method: 'PUT'
+            }
+            )
+            .then(response => {
+                if(!response.ok) {
+                    throw new Error('Network reponse was not OK');
                 }
-                else if(data.status == 202){
-                    alert("Pay the fine amount to borrow another book!");
-                }
+                return response.text();
+            })
+            .then(data => {
+                alert(data);
                 this.getBooks(); 
             })
             .catch(error => {
                 console.log(error); 
                 console.error(error);
             });
+            });
+
+            
         },
         returnBook(bookId) {
-            fetch(`http://localhost:8080/books/return/${bookId}/${this.username}`, {
+
+            fetch('http://localhost:8080/students/getCurrentMomo')
+            .then(response => {
+                if(!response.ok) {
+                    throw new Error('Network reponse was not OK');
+                }
+                return response.text();
+            })
+            .then(data => {
+                this.username = data;
+                console.log("username :" + this.username);
+                fetch(`http://localhost:8080/books/return/${bookId}/${this.username}`, {
                 method: 'PUT'
             })
-            // .then(response => response.json())
+            .then(response => {
+                if(!response.ok) {
+                    throw new Error('Network reponse was not OK');
+                }
+                return response.text();
+            })
             .then(data => {
                 console.log(data); 
-                
-                if(data.status == 200) {
-                    alert("Book return successfully!");
-                }
-                else {
-                    alert("Error while returning book!");
-                }
-                
+                alert(data);
                 this.getBooks();
             })
             .catch(error => {
                 console.log(error); 
             });
+            });
+
         }
     }
 };
