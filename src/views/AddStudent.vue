@@ -85,8 +85,16 @@ import NavbarLogin from '../components/NavbarLogin.vue';
                     },
                     body: JSON.stringify(this.student)
                 })
+                .then(response => {
+                if(!response.ok) {
+                    throw new Error('Network reponse was not OK');
+                }
+                return response.text();
+                })
                 .then(data => {
-                    console.log(data)
+                    console.log(data);
+                    alert(data);
+
                     this.$router.push("/login");
                 })
 

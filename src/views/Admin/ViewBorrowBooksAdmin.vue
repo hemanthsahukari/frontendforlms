@@ -11,7 +11,7 @@
                             <th scope="col">BorrowedBy</th>
                             <th scope="col">Borrow Date</th>
                             <th scope="col">Return Date</th> 
-                            <th scope="col">Fine amount</th>
+                            <!-- <th scope="col">Fine amount</th> -->
                             
         
 
@@ -25,7 +25,7 @@
                             <td>{{ book.borrowBy }}</td>
                             <td>{{ book.borrowDate }}</td>
                             <td>{{ book.returnDate }}</td>
-                            <td>{{ book.fineAmount }}</td>    
+                            <!-- <td>{{ book.fineAmount }}</td>     -->
                     
                           </tr>
                         </tbody>

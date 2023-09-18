@@ -24,7 +24,7 @@
                     <div class="row">
                         <div class="col-md-12 form-group mb-3">
                             <label for="copies" class="form-label">copies</label>
-                            <input id="copies" type="number" name="copies" class="form-control" placeholder="Copies" required v-model="book.copies">
+                            <input id="copies" type="number" name="copies" class="form-control" placeholder="Copies" required v-model="book.copiesAvailable">
                         </div>
                     </div>
 
@@ -56,7 +56,7 @@ export default {
                 id: '',
                 title: '',
                 author: '',
-                copies: ''
+                copiesAvailable: ''
             }
         }
     },

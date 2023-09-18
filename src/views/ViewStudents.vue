@@ -17,6 +17,9 @@
                             <th scope="col">Email</th>
                             <th scope="col">Phone Number</th>
                             <th scope="col">Action</th>
+                            <th scope="col">Fine amount</th>
+
+
                           </tr>
                         </thead>
                         <tbody>
@@ -25,11 +28,14 @@
                             <td>{{student.name}}</td>
                             <td>{{student.email}}</td>
                             <td>{{student.pNo}}</td>
-                            
+                           
+
+
                             <td>
                               <a class="btn btn-primary" :href="`/edit/${student.id}`">Edit</a>
                               <button class="btn btn-danger mx-2" @click="deleteStudent(student.id)">Delete</button>
                             </td>
+                            <td>{{ student.fineAmount }}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -81,6 +87,7 @@ import Navbar from '../components/Navbar.vue'
         beforeMount(){
             this.getStudents()
         }
+
 
     }
 

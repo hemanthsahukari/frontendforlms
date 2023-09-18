@@ -12,6 +12,7 @@ import AdminLoginVue from '../views/AdminLogin.vue'
 import ViewBorrowedBoooks from '../views/ViewBorrowedBooks.vue'
 import ViewBorrowedBooksAdmin from '../views/Admin/ViewBorrowBooksAdmin.vue'
 import ViewHistory from '../views/ViewHistory.vue'
+import ViewFineAmount from '../views/ViewFineAmount.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -96,7 +97,13 @@ const router = createRouter({
       path: '/BorrowedBooks',
       name: 'ViewBorrowedBooksAdmin',
       component: ViewBorrowedBooksAdmin
+    },
+    {
+      path: '/ViewFineAmount',
+      name: 'ViewFineAmount',
+      component: ViewFineAmount
     }
+
 
   ]
 })

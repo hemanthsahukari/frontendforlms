@@ -8,7 +8,6 @@
                             <th scope="col">Id</th>
                             <th scope="col">Title</th>
                             <th scope="col">Author</th>
-                            <!-- <th scope="col">BorrowedBy</th> -->
                             <th scope="col">Borrow Date</th>
                             <th scope="col">Return Date</th> 
                             
@@ -21,7 +20,6 @@
                             <th scope="row">{{book.id}}</th>
                             <td>{{book.title}}</td>
                             <td>{{book.author}}</td>
-                            <!-- <td>{{ book.borrowBy }}</td> -->
                             <td>{{ book.borrowDate }}</td>
                             <td>{{ book.returnDate }}</td>    
                     

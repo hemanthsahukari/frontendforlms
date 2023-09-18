@@ -13,11 +13,15 @@
                         <thead>
                           <tr>
                             <th scope="col">User Borrow History</th>
+                            <th scope="col">Borrow Date</th>
+                            
+
                           </tr>
                         </thead>
                         <tbody>
                           <tr v-for="history in histories" :key="history.id">
                             <td>{{history.message}}</td>
+                            <td>{{ history.date }}</td>
                           </tr>
                         </tbody>
                       </table>

@@ -25,6 +25,11 @@
                     <a class="nav-link" href="/ViewHistory">History</a>
                     </li>
                     <li class="nav-item">
+                    <a class="nav-link" href="/ViewFineAmount">fineAmount</a>
+                    </li>
+
+
+                    <li class="nav-item">
                     <a class="nav-link" href="/login">Logout</a>
                 </li>
                 </ul>
